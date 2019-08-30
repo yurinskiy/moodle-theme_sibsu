@@ -1,3 +1,11 @@
+@import "fonts";
+@import "header";
+
+h1 {
+    font-family: open-sans-condensed-bold;
+    font-weight: bold;
+}
+
 // Post SCSS for the theme.
 
 body.pagelayout-login {
