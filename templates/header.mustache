@@ -1,0 +1,85 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template sibsu/header
+
+    This template renders the header.
+
+    Example context (json):
+    {
+        "contextheader": "context_header_html",
+        "settingsmenu": "settings_html",
+        "hasnavbar": false,
+        "navbar": "navbar_if_available",
+        "courseheader": "course_header_html"
+    }
+
+    Page header.
+}}
+<header id="page-header" class="row">
+    <div class="col-12 bg-white pt-3 pb-3">
+        <div class="row">
+            <div class="col-auto">
+                <img src="{{{logo}}}" alt="">
+            </div>
+            <div class="col">
+                <h1>{{{fullname}}}</h1>
+            </div>
+            <div class="col-auto">
+                <form action="https://moodle.yuriyyurinskiy.ru/course/search.php" id="headercoursesearch" method="get" class="form-inline">
+                    <fieldset class="coursesearchbox invisiblefieldset">
+                        <input name="search" type="text" size="12" value="" class="form-control rounded" placeholder="Поиск курса">
+                        <button class="btn btn-secondary" type="submit">Применить</button>
+                        <a class="btn btn-link p-0" role="button" data-container="body" data-toggle="popover" data-placement="right" data-content="<div class=&quot;no-overflow&quot;><p>Вы можете искать одновременно несколько слов и осуществить более точный поиск следующим образом:</p>
+
+<ul><li>слово - найти любые соответствия этого слова в тексте.</li>
+<li>+слово - искать только полное соответствие.</li>
+<li>-слово - не выводить результаты, содержащие это слово.</li>
+</ul></div> " data-html="true" tabindex="0" data-trigger="focus" data-original-title="" title="">
+                            <i class="icon fa fa-question-circle text-info fa-fw " aria-hidden="true" title="Справка по использованию элемента «Поиск курсов»" aria-label="Справка по использованию элемента «Поиск курсов»" id="yui_3_17_2_1_1567146603932_263"></i>
+                        </a>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-body">
+                <div class="d-flex row">
+                    {{#settingsmenu}}
+                    <div class="context-header-settings-menu">
+                        {{{settingsmenu}}}
+                    </div>
+                    {{/settingsmenu}}
+                </div>
+                <div class="d-flex flex-wrap">
+                    {{#hasnavbar}}
+                    <div id="page-navbar">
+                        {{{navbar}}}
+                    </div>
+                    {{/hasnavbar}}
+                    <div class="ml-auto d-flex">
+                        {{{pageheadingbutton}}}
+                    </div>
+                    <div id="course-header">
+                        {{{courseheader}}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

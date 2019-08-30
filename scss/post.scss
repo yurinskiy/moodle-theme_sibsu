@@ -8,6 +8,10 @@ h1 {
 
 // Post SCSS for the theme.
 
+#logo {
+    background-image: url([[pix:theme_sibsu|defaultlogo]]);
+}
+
 body.pagelayout-login {
     background-image: url([[pix:theme_sibsu|loginbackgroundimage]]);
     background-size: cover;

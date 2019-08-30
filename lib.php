@@ -64,6 +64,30 @@ function theme_sibsu_get_main_scss_content($theme) {
 }
 
 /**
+ * Get theme setting
+ * @param string $setting
+ * @param string $format = false
+ */
+function get_setting($setting, $format = false) {
+    static $theme;
+    if (empty($theme)) {
+        $theme = theme_config::load('sibsu');
+    }
+
+    if (empty($theme->settings->$setting)) {
+        return false;
+    } else if (!$format) {
+        return $theme->settings->$setting;
+    } else if ($format === 'format_text') {
+        return format_text($theme->settings->$setting, FORMAT_PLAIN);
+    } else if ($format === 'format_html') {
+        return format_text($theme->settings->$setting, FORMAT_HTML, array('trusted' => true));
+    } else {
+        return format_string($theme->settings->$setting);
+    }
+}
+
+/**
  * Copy the updated theme image to the correct location in dataroot for the image to be served
  * by /theme/image.php. Also clear theme caches.
  *

@@ -25,6 +25,14 @@
 // This line protects the file from being accessed by a URL directly.
 defined('MOODLE_INTERNAL') || die();
 
+// SETTINGS
+// Header site
+$string['header'] = 'Header';
+$string['defaultlogo'] = 'Logo';
+$string['defaultlogo_desc'] = 'Upload logo';
+// Other boots
+$string['other'] = 'Other settings';
+
 // The name of the second tab in the theme settings.
 $string['advancedsettings'] = 'Advanced settings';
 // The backgrounds tab name.
@@ -36,7 +44,7 @@ $string['brandcolor_desc'] = 'The accent colour.';
 // A description shown in the admin theme selector.
 $string['choosereadme'] = 'Theme sibsu is a child theme of Boost. It adds the ability to upload background sibsus.';
 // Name of the settings pages.
-$string['configtitle'] = 'sibsu settings';
+$string['configtitle'] = 'SibSU settings';
 // Background image for dashboard page.
 $string['dashboardbackgroundimage'] = 'Dashboard page background image';
 // Background image for dashboard page.
